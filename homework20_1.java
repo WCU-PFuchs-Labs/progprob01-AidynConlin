@@ -22,7 +22,6 @@ public class homework20_1 {
       Scanner sc = new Scanner(System.in);
       LinkedList llist = new LinkedList();
 
-      System.out.println("Enter 5 sorted numbers: ");
       ListNode prev = null;
       for (int i = 0; i < 5; i++) {
          int num = sc.nextInt();
@@ -34,13 +33,8 @@ public class homework20_1 {
          prev = newNode;
       }
 
-      System.out.println("Original list: ");
-      System.out.println(llist);
-
-      // ✅ Call the deleteDuplicates method
       deleteDuplicates(llist);
 
-      System.out.println("After deleting duplicates: ");
       System.out.println(llist);
 
       sc.close();
@@ -52,7 +46,6 @@ public class homework20_1 {
       ListNode current = llist.head;
       while (current != null && current.next != null) {
          if (current.value == current.next.value) {
-            // skip duplicate node
             current.next = current.next.next;
          } else {
             current = current.next;
@@ -69,7 +62,6 @@ class ListNode {
 
 class LinkedList {
    ListNode head;
-
    public String toString() {
       String nodeData = "";
       ListNode ref = head;
